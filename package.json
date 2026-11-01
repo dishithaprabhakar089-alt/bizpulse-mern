@@ -1,0 +1,27 @@
+{
+  "name": "small-business-management",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Smart Small Business Management - Track Sales, Expenses & Real-time Net Profit/Loss",
+  "main": "server/index.js",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install",
+    "client:build": "cd client && npm run build",
+    "server": "node server/index.js",
+    "dev": "concurrently \"npm run server\" \"cd client && npm run dev\"",
+    "start": "node server/index.js",
+    "seed": "node server/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

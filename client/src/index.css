@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased min-h-screen;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glowing profit/loss pulse */
+@keyframes pulseGreen {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(16, 185, 129, 0.45);
+  }
+}
+
+@keyframes pulseRed {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.45);
+  }
+}
+
+.profit-glow {
+  animation: pulseGreen 3s infinite ease-in-out;
+}
+
+.loss-glow {
+  animation: pulseRed 3s infinite ease-in-out;
+}
